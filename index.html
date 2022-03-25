@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--有两个地方可以加入sctipt元素-->
+<!--一个是head，一个是body部分的末尾-->
+<!--
+    建议在body的末尾添加
+    因为
+    第一个浏览器从上到下顺序解析这个文件
+        如果在head部分放script代码，就不会进行渲染内容，用户体验会很差
+    第二个在body的最后就会确定所有元素已经被浏览器渲染完了
+        有例外：当用第三方代码不得不放在head中时
+
+        所以综上，script code一般就放在body的末尾
+-->
+<body>
+    <h1>Hello   World</h1>>
+    <script src="ch_4_array.js"></script>
+</body>
+</html>
