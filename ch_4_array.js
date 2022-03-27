@@ -148,7 +148,7 @@ const filtered =  numbers7.filter(v => v >= 0)
 console.log(filtered);
 
 /*
-self_callback
+// self_callback
 
 function add(a, b){
     return a + b;
@@ -161,6 +161,8 @@ function calculate(num1, num2, callback){
 console.log(calculate(2, 3, add));
 */
 
+
+// self-filter-toReverse
 function turnToReverse(arr){
     for (let i in arr){
         if (arr[i]<=0) {
@@ -176,3 +178,48 @@ function filter_self(arr, callback){
 
 let numbers8 = [-1, -2, -3, 1, 2, 3];
 console.log(filter_self(numbers8, turnToReverse))
+
+
+// mapping an array:
+
+const numbers9 = [1, -1, 2, 3];
+// const filtered1 = numbers9.filter(n => n>=0);
+
+// const items = filtered1.map(n => '<li>' + n +'</li>');
+// const html = '<ul>' + items.join('') + '</ul>';
+// join():将列表转为字符串
+
+// const items = numbers9.map(n => {
+//     return  obj = { value: n }
+// });
+
+// const items = numbers9.map(n => {value: n});
+// const items = numbers9.map(n => ({value: n}));
+// 箭头函数返回对象的时候要加小括号
+
+
+const items = numbers9
+    .filter(n=> n >=0)
+    .map(n => ({value: n}))
+    .filter(obj => obj.value > 1)
+    .map(obj => obj.value);
+
+console.log(items);
+
+// reducing an array:
+// array.reduce():将数组缩为一个单一的元素
+
+const numbers10 = [1, -1, 2, 3];
+
+// let sum = 0;
+// for(let n of numbers10)
+//     sum += n;
+
+const sum = numbers10.reduce((accumulator, currentValue) => accumulator+ currentValue);
+//  a = 0, c = 1 => a =1
+//  a = 1, c = -1 => a =0
+//  a = 0, c = 2 => a =2
+//  a = 2, c = 3 => a =5
+// accumulator:累加值
+
+console.log(sum);
