@@ -147,15 +147,32 @@ const numbers7 = [1, -1, 2, 3];
 const filtered =  numbers7.filter(v => v >= 0)
 console.log(filtered);
 
-// self_callback
+/*
+self_callback
 
-// function add(a, b){
-//     return a + b;
-// }
+function add(a, b){
+    return a + b;
+}
 
-// function calculate(num1, num2, callback){
-//     return callback(num1, num2)
-// }
+function calculate(num1, num2, callback){
+    return callback(num1, num2)
+}
 
-// console.log(calculate(2, 3, add));
+console.log(calculate(2, 3, add));
+*/
 
+function turnToReverse(arr){
+    for (let i in arr){
+        if (arr[i]<=0) {
+            arr[i] = -arr[i];
+        }
+    }
+    return arr;
+}
+
+function filter_self(arr, callback){
+    return callback(arr)
+}
+
+let numbers8 = [-1, -2, -3, 1, 2, 3];
+console.log(filter_self(numbers8, turnToReverse))
