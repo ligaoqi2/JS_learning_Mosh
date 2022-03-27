@@ -147,4 +147,15 @@ const numbers7 = [1, -1, 2, 3];
 const filtered =  numbers7.filter(v => v >= 0)
 console.log(filtered);
 
+// self_callback
+
+// function add(a, b){
+//     return a + b;
+// }
+
+// function calculate(num1, num2, callback){
+//     return callback(num1, num2)
+// }
+
+// console.log(calculate(2, 3, add));
 
